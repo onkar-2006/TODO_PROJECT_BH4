@@ -1,0 +1,252 @@
+/* General Layout */
+.dashboard-wrapper {
+  position: relative; /* REQUIRED for the absolute/fixed banner */
+  background-color: #ffffff; 
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- NEW: Notification Banner --- */
+.status-banner-inside {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 25px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideDownFade 0.4s ease-out;
+}
+
+.status-banner-inside.success { background-color: #2ecc71; }
+.status-banner-inside.error { background-color: #e74c3c; }
+
+@keyframes slideDownFade {
+  from { top: -20px; opacity: 0; }
+  to { top: 20px; opacity: 1; }
+}
+
+/* Navbar */
+.top-nav {
+  background-color: #1a222e;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.brand-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.brand-tagline {
+  color: #94a3b8;
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* The Dark Input Card */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.task-input-card {
+  background-color: #1a222e;
+  padding: 25px 35px;
+  border-radius: 8px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  color: #f29924; 
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.field input {
+  padding: 12px 15px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #f29924;
+}
+
+.btn-add {
+  background-color: #f29924; 
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #d9851e;
+}
+
+/* Empty State */
+.empty-view {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.icon-circle {
+  background-color: #1a222e;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.glass-icon {
+  font-size: 1.4rem;
+  color: #f29924;
+}
+
+.empty-view h2 {
+  color: #1e293b;
+  margin-bottom: 5px;
+}
+
+.empty-view p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Logout Button Styling */
+.logout-btn {
+  background-color: transparent;
+  color: #f29924;
+  border: 1px solid #f29924;
+  padding: 6px 18px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: auto; 
+}
+
+.logout-btn:hover {
+  background-color: #f29924;
+  color: #1a222e;
+}
+
+/* Task List Styling */
+.task-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-row {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 15px 25px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.task-row.is-done {
+  opacity: 0.6;
+  border-left: 5px solid #2ecc71; /* Green indicator */
+  background-color: #f8fafc;
+}
+
+.task-row.is-done h3 {
+  text-decoration: line-through;
+  color: #64748b;
+}
+
+.task-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.status-btn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.status-btn:hover {
+  background: #e2e8f0;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  filter: grayscale(1);
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}

@@ -1,0 +1,117 @@
+/* Register.css */
+.register-container {
+    position: relative; /* REQUIRED to anchor the message inside */
+    padding: 0 0 40px 0; 
+    overflow: hidden;
+    max-width: 480px;
+    margin: 50px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #04153b;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* NEW: Message style pinned to the top of the card */
+.status-banner-inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 100;
+    animation: slideDown 0.3s ease-out;
+}
+
+.status-banner-inside.success {
+    background-color: #2ecc71; /* Green */
+}
+
+.status-banner-inside.error {
+    background-color: #e74c3c; /* Red */
+}
+
+.register-banner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 200px;    
+    margin: auto;    
+    height: 150px;          
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;   
+    display: block;        
+}
+
+.header-section, form {
+    padding: 0 40px;
+}
+
+.form-title {
+    color: #ffffff; /* Changed to white to match your dark theme */
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.header-section p, .header-section h2 {
+    color: #ffffff;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e7b40b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.register-button:hover {
+    background-color: #f3c11d;
+}
+
+/* Updated Animation for internal sliding */
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+.error-text-small {
+    color: #ff4d4d; /* Bright red */
+    font-size: 0.85rem;
+    margin-top: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}

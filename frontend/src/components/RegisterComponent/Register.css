@@ -1,0 +1,113 @@
+/* Register.css */
+.register-container {
+    padding: 0 0 40px 0; 
+    position: relative;
+    overflow: hidden;
+    max-width: 480px;
+    margin: 50px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #04153b;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.register-banner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 200px;    
+    margin: auto;    
+    height: 150px;          
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;   
+    display: block;        
+}
+
+.header-section, form {
+    padding: 0 40px;
+}
+
+.form-title {
+    color: #ffffff; /* Changed from #333 to be visible on dark bg */
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.header-section p, .header-section h2 {
+    color: #ffffff;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.input-field:hover {
+    background-color: #b5c2c2;
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e7b40b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.register-button:hover {
+    background-color: #31302a;
+}
+
+/* ERROR MESSAGE STYLE */
+.error-message {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: 500;
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* SUCCESS BANNER STYLE */
+.status-banner-inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    z-index: 10;
+    animation: slideDown 0.3s ease-out;
+}
+
+.status-banner-inside.success {
+    background-color: #2ecc71;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
