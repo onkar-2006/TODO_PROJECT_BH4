@@ -65,14 +65,15 @@ exports.login = async (req, res) => {
   }
 };
 
+
 exports.logout = (req, res) => {
   res.cookie('token', null, {
     expires: new Date(Date.now()),
     httpOnly: true,
+    secure: true,      
+    sameSite: 'none',
   });
   res.status(200).json({ success: true, message: 'Logged out successfully' });
 };
-
-
 
 
