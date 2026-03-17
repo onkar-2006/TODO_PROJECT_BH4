@@ -9,10 +9,10 @@ function Home() {
   const [msg, setMsg] = useState({ text: "", type: "" }); 
   const navigate = useNavigate();
 
-  // Axios instance
+
   const api = axios.create({
-    baseURL: "http://localhost:5000/api/v1",
-    withCredentials: true,
+  baseURL: `${import.meta.env.VITE_API_URL}/api/v1`, 
+  withCredentials: true,
   });
 
   const showMsg = (text, type) => {
@@ -25,7 +25,6 @@ function Home() {
       const { data } = await api.get("/my-tasks");
       if (data.success) setTasks(data.todos);
     } catch (err) {
-      // If unauthorized, send to login
       if (err.response?.status === 401) navigate("/signin");
       console.error("Fetch error:", err);
     }
@@ -67,17 +66,16 @@ function Home() {
       showMsg("Delete failed", "error");
     }
   };
-
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:5000/api/auth/logout", { withCredentials: true });
+      await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/logout`, { withCredentials: true });
       navigate("/signin");
     } catch (err) {
       navigate("/signin");
     }
   };
 
-  return (
+    return (
     <div className="dashboard-wrapper">
       {msg.text && (
         <div className={`status-banner-inside ${msg.type}`}>

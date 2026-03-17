@@ -21,12 +21,12 @@ function Login() {
     const HandleSubmit = async (e) => {
         e.preventDefault();
         try {
+            
             const response = await axios.post(
-                "http://localhost:5000/api/auth/login", 
-                data, 
-                { withCredentials: true }
-            );
-
+            `${import.meta.env.VITE_API_URL}/api/auth/login`, 
+            data, 
+            { withCredentials: true }
+         );
             setMsg({ text: "Login Successful!", type: "success" });
             setTimeout(() => navigate("/home"), 1000);
         } catch (error) {

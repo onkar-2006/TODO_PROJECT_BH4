@@ -30,11 +30,10 @@ function Register() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
-        data,
-        { withCredentials: true }
-      );
-      
+    `${import.meta.env.VITE_API_URL}/api/auth/register`,
+     data,
+     { withCredentials: true }
+     );
       setMsg({ text: "Registration Successful! Redirecting...", type: "success" });
       setTimeout(() => navigate("/signin"), 2000);
 
